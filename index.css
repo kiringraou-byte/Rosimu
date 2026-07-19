@@ -1,0 +1,484 @@
+/* â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+   re-style.css â€” Revenant Elegy design system applied to re-calc
+   Drop-in replacement for style.css.
+   Note: head.js theme arrays override body/header/select/subheader/
+   main background colors inline. To complete the "Original" theme
+   update in head.js: bBGC[0]="#F4F6F8", selBGC[0]="#E9E9EB",
+   ssBGC[0]="#E9E9EB", mBGC[0]="#FAFBFC", tBGC[0]="#FAFBFC".
+   â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â” */
+
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url('./fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+:root {
+    --grey-0: #FFF;
+    --grey-25: #FAFBFC;
+    --grey-50: #F4F6F8;
+    --grey-200: #E9E9EB;
+    --grey-300: #D1D1D6;
+    --grey-400: #DCDCDE;
+    --grey-500: #BBBBBE;
+    --grey-700: #6E6E73;
+    --grey-900: #1D1D1F;
+    --blue-400: #C7DADD;
+    --blue-500: #77BBC4;
+    --blue-700: #5FA8B2;
+    --green-500: #7FBF9A;
+    --red-500: #D95C5C;
+    --radius-4: 4px;
+    --radius-8: 8px;
+}
+
+/* â”€â”€ Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+body {
+    background-color: var(--grey-300);
+    font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif;
+    font-size: 0.8125em;
+    margin: 7px auto;
+    display: table;
+    color: var(--grey-900);
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+td {
+    padding: 1px 0 1px 5px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+b {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue-700);
+    transition: color 0.15s ease;
+}
+
+a:hover {
+    color: var(--blue-500);
+    text-decoration: underline;
+}
+
+p {
+    color: var(--red-500);
+    font-weight: bold;
+}
+
+/* â”€â”€ Section headers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+h1 {
+    text-align: center;
+}
+
+h1,
+h3 {
+    margin: 0;
+    border-radius: var(--radius-8) var(--radius-8) 0 0;
+    background: linear-gradient(to bottom, #355, #477);
+    background-color: #466;
+    padding-left: 20px;
+    height: 52px;
+    font-family: 'Inter-Medium', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 0.5px;
+    font-variant: small-caps;
+    line-height: 265%;
+    color: var(--grey-0);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* â”€â”€ Inputs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+input {
+    margin: 2px;
+    padding: 1px 4px;
+    vertical-align: middle;
+    font-family: inherit;
+    font-size: 1em;
+    color: var(--grey-900);
+    border: 1px solid var(--grey-400);
+    border-radius: var(--radius-4);
+    background-color: var(--grey-0);
+    outline: none;
+    box-sizing: border-box;
+    height: auto !important;
+}
+
+input:focus {
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 2px var(--blue-400);
+}
+
+input[type="button"],
+input[type="submit"] {
+    background-color: #D8D8DC;
+    border: none;
+    border-radius: var(--radius-4);
+    color: var(--grey-900);
+    font-weight: normal;
+    cursor: pointer;
+    padding: 3px 10px;
+    transition: background-color 0.18s ease;
+    box-shadow: none;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: #ABABAF;
+}
+
+input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    accent-color: var(--blue-500);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* â”€â”€ Selects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+select {
+    border: 1px solid var(--grey-400);
+    margin: 1px;
+    background-color: var(--grey-50);
+    border-radius: var(--radius-4);
+    font-family: inherit;
+    font-size: 1em;
+    color: var(--grey-900);
+    padding: 1px 3px;
+    cursor: pointer;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--blue-500);
+}
+
+select option {
+    padding: 0;
+}
+
+/* â”€â”€ Section subheaders (th / .subheader) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+th input,
+.subheader input {
+    border: 0;
+    margin: 0 4px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    border-radius: var(--radius-4);
+    box-shadow: none;
+}
+
+th select,
+.subheader select {
+    margin: 0;
+    letter-spacing: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--grey-900);
+}
+
+th div,
+.subheader div {
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+th {
+    padding: 3px 8px;
+    color: var(--grey-0);
+    line-height: 1.8em;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    background-color: #466;
+    text-align: left;
+}
+
+.subheader {
+    padding: 3px 8px;
+    color: var(--grey-0);
+    line-height: 1.8em;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    background-color: #466;
+}
+
+.thin select {
+    height: auto;
+    margin: 1px;
+}
+
+/* â”€â”€ Content panels â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+.main {
+    border: 1px solid var(--grey-300);
+    border-radius: 0 0 var(--radius-8) var(--radius-8);
+    background-color: var(--grey-0);
+    padding: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tborder {
+    border: 1px solid var(--grey-300);
+    border-radius: var(--radius-4);
+    margin: 0 14px 12px 0;
+    overflow: hidden;
+}
+
+.tborderA {
+    border: 1px solid var(--grey-300);
+    border-radius: var(--radius-4);
+    width: auto;
+    margin: 0 14px 12px 0;
+    overflow: hidden;
+}
+
+.tequip td {
+    padding: 0 0 0 1px;
+    margin: 0;
+    vertical-align: top;
+}
+
+/* â”€â”€ Other Info panel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+#A_KakutyouSel td {
+    padding: 1px 0 1px 3px;
+}
+
+/* â”€â”€ Equipment sub-slot indent â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+.tequip td.equip-sub {
+    padding-left: 56px;
+}
+
+/* â”€â”€ Collapse empty stat rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+tr:has(#CRIATKname:empty),
+tr:has(#bSUB4name:empty),
+tr:has(#bSUB3name:empty) {
+    display: none;
+}
+
+/* â”€â”€ Dividers & layout helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+.data {
+    border-right: 1px solid var(--grey-300);
+    padding-right: 4px;
+}
+
+.dotB {
+    border-bottom: 1px solid var(--grey-300);
+    padding-bottom: 3px;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid var(--grey-900);
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    float: right;
+    font-weight: 300;
+}
+
+.left {
+    float: left;
+    font-weight: 300;
+}
+
+.manual input,
+input.center {
+    border: 1px solid var(--grey-500);
+    width: 36px !important;
+}
+
+/* â”€â”€ Links section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+.links {
+    background: linear-gradient(to bottom, #355, #477);
+    background-color: #466;
+    border-radius: var(--radius-8);
+    padding: 20px;
+    text-align: center;
+    color: var(--grey-0);
+}
+
+.links a {
+    color: var(--grey-0);
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: var(--blue-400);
+    text-decoration: none;
+}
+
+.main a {
+    color: var(--blue-700);
+}
+
+.main a:hover {
+    color: var(--blue-500);
+    text-decoration: underline;
+}
+
+/* â”€â”€ Tooltip (.name) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+.mail {
+    background: url(images/ce4.png) no-repeat;
+    padding: 0 58px;
+}
+
+.name {
+    position: relative;
+    text-decoration: underline;
+    text-decoration-color: var(--grey-500);
+    text-underline-offset: 2px;
+    cursor: help;
+}
+
+.name .nametext {
+    visibility: hidden;
+    width: 140px;
+    background-color: var(--grey-900);
+    color: var(--grey-0);
+    text-align: center;
+    border-radius: var(--radius-4);
+    padding: 5px 8px;
+    position: absolute;
+    z-index: 4000;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -70px;
+    font-size: 0.95em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    line-height: 1.4;
+}
+
+.name .nametext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--grey-900) transparent transparent transparent;
+}
+
+.name:hover .nametext {
+    visibility: visible;
+}
+
+.point {
+    cursor: pointer;
+}
+
+.point:hover {
+    text-decoration: underline;
+}
+
+/* â”€â”€ Wide-screen fixed layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+@media screen and (min-width: 1277px) and (max-height: 1700px) {
+    body {
+        margin-left: 439px;
+        margin-right: 18px;
+    }
+
+    #fixable {
+        border: 0;
+        position: fixed;
+        top: 78px;
+        left: 18px;
+    }
+
+    #cresults {
+        margin-top: 10px;
+    }
+}
+
+/* â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+#foot {
+    line-height: 185%;
+    text-align: right;
+    color: var(--grey-700);
+}
+
+/* â”€â”€ Calc options overlay (fixed top-left) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+#calcoptions {
+    background: linear-gradient(to bottom, #2b4444, #355);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 var(--radius-8) 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 6px 8px;
+    color: var(--grey-0);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 0.95em;
+}
+
+#calcoptions p {
+    color: var(--blue-400);
+    text-align: center;
+}
+
+/* â”€â”€ Modal overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+.p_overlay {
+    background: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    display: block;
+}
+
+.p_box {
+    background: var(--grey-50);
+    border: 1px solid var(--grey-300);
+    z-index: 6000;
+    display: block;
+    width: 320px;
+    position: relative;
+    margin: 100px auto 0;
+    height: 200px;
+    border-radius: var(--radius-8);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    padding: 16px;
+}
+
+.p_close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    text-indent: -9999px;
+    background: url(closebtnicon.png);
+    width: 18px;
+    height: 19px;
+    cursor: pointer;
+}
